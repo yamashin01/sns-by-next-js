@@ -18,12 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="ja" className="h-full">
-      <body className={`${inter.className} flex flex-col h-full`}>
-        <Header />
-        <main className="flex-1">{children}</main>
-      </body>
-    </html>
+      <html lang="ja" className="h-full">
+        <body className={`${inter.className} flex flex-col h-full`}>
+          <Header />
+          <main className="flex-1">{children}</main>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
