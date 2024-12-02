@@ -1,0 +1,95 @@
+{
+  "data": {
+    "backup_code_enabled": false,
+    "banned": false,
+    "create_organization_enabled": true,
+    "created_at": 1731626856135,
+    "delete_self_enabled": true,
+    "email_addresses": [
+      {
+        "created_at": 1731626854990,
+        "email_address": "shinya.yamada@benext-corp.com",
+        "id": "idn_2orTmaescpURuwL6wlk6OTdPwQw",
+        "linked_to": [
+          { "id": "idn_2orTmeLyY9cCrjwej6dtXZi1Tie", "type": "oauth_github" }
+        ],
+        "object": "email_address",
+        "reserved": false,
+        "updated_at": 1731626856162,
+        "verification": {
+          "attempts": null,
+          "expire_at": null,
+          "status": "verified",
+          "strategy": "from_oauth_github"
+        }
+      }
+    ],
+    "enterprise_accounts": [],
+    "external_accounts": [
+      {
+        "approved_scopes": "read:user user:email",
+        "avatar_url": "https://avatars.githubusercontent.com/u/40530478?v=4",
+        "created_at": 1731626854979,
+        "email_address": "shinya.yamada@benext-corp.com",
+        "first_name": "yama",
+        "id": "eac_2orTmaCj4tzK8xYsLq7VEaenO20",
+        "identification_id": "idn_2orTmeLyY9cCrjwej6dtXZi1Tie",
+        "image_url": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2F2YXRhcnMuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3UvNDA1MzA0Nzg/dj00IiwicyI6Ijcydyt5dGZwemd1anRlWG9Tc2R0MmpPMzY2aTBDN1RoM24xRThUVEZaZGcifQ",
+        "label": null,
+        "last_name": "",
+        "object": "external_account",
+        "provider": "oauth_github",
+        "provider_user_id": "40530478",
+        "public_metadata": {},
+        "updated_at": 1731626854979,
+        "username": "yamashin01",
+        "verification": {
+          "attempts": null,
+          "expire_at": 1731627451185,
+          "status": "verified",
+          "strategy": "oauth_github"
+        }
+      }
+    ],
+    "external_id": null,
+    "first_name": "yama",
+    "has_image": true,
+    "id": "user_2orTmsZMK5i1nXVnKZfNocu8Bcv",
+    "image_url": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ2l0aHViL2ltZ18yb3JUbXJEenFCaVBmOXl6QTNRc0ZoaTV1bm8ifQ",
+    "last_active_at": 1731626856133,
+    "last_name": null,
+    "last_sign_in_at": null,
+    "legal_accepted_at": null,
+    "locked": false,
+    "lockout_expires_in_seconds": null,
+    "mfa_disabled_at": null,
+    "mfa_enabled_at": null,
+    "object": "user",
+    "passkeys": [],
+    "password_enabled": false,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_2orTmaescpURuwL6wlk6OTdPwQw",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://images.clerk.dev/oauth_github/img_2orTmrDzqBiPf9yzA3QsFhi5uno",
+    "public_metadata": {},
+    "saml_accounts": [],
+    "totp_enabled": false,
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1731626856188,
+    "username": "yamashin01",
+    "verification_attempts_remaining": 100,
+    "web3_wallets": []
+  },
+  "event_attributes": {
+    "http_request": {
+      "client_ip": "240b:10:b840:8e00:74c0:f971:14e3:30ad",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+    }
+  },
+  "object": "event",
+  "timestamp": 1731626856229,
+  "type": "user.created"
+}
