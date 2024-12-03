@@ -26,10 +26,7 @@ export const addPostAction = async (formData: FormData) => {
     });
     if (!user) {
       console.error("User not found in database");
-      return {
-        error: "",
-        success: true,
-      };
+      throw new Error("User not found in database");
     }
 
     await prisma.post.create({
@@ -38,6 +35,10 @@ export const addPostAction = async (formData: FormData) => {
         authorId: user.id,
       },
     });
+    return {
+      error: undefined,
+      success: true,
+    };
   } catch (err) {
     if (err instanceof z.ZodError) {
       return {
