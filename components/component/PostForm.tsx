@@ -2,25 +2,22 @@
 
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { addPostAction } from "@/lib/actions";
 import SubmitButton from "./SubmitButton";
+import { useFormState } from "react-dom";
 
 export default function PostForm() {
-  const [error, setError] = useState<string | undefined>("");
   const formRef = useRef<HTMLFormElement>(null);
-
-  const handlePostAction = async (postData: FormData) => {
-    const result = await addPostAction(postData);
-    if (!result?.success) {
-      setError(result?.error);
-    } else {
-      setError("");
-      if (formRef.current) {
-        formRef.current.reset();
-      }
-    }
+  const initialState = {
+    error: undefined,
+    success: false,
   };
+
+  const [state, formAction] = useFormState(addPostAction, initialState);
+
+  if (state.success && formRef.current) formRef.current.reset();
+
   return (
     <div>
       <div className="flex items-center gap-4">
@@ -30,7 +27,7 @@ export default function PostForm() {
         </Avatar>
         <form
           ref={formRef}
-          action={handlePostAction}
+          action={formAction}
           className="flex flex-1 items-center"
         >
           <Input
@@ -42,7 +39,7 @@ export default function PostForm() {
           <SubmitButton />
         </form>
       </div>
-      {error && <p className="mt-1 text-destructive">{error}</p>}
+      {state.error && <p className="mt-1 text-destructive">{state.error}</p>}
     </div>
   );
 }
