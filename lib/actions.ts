@@ -1,6 +1,7 @@
 "use server";
 
 import { auth } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import prisma from "./prisma";
 
@@ -43,6 +44,10 @@ export const addPostAction = async (
         authorId: user.id,
       },
     });
+
+    // Update caches
+    revalidatePath("/");
+
     return {
       error: undefined,
       success: true,
