@@ -1,5 +1,6 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import fetchPosts from "@/lib/postFetcher";
 import prisma from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { HeartIcon, MessageCircleIcon, Share2Icon, ClockIcon } from "./Icons";
@@ -18,30 +19,7 @@ export default async function PostList() {
   });
   if (!autherId) return;
 
-  let posts = [];
-  posts = await prisma.post.findMany({
-    where: {
-      authorId: {
-        in: [autherId.id],
-      },
-    },
-    include: {
-      author: true,
-      likes: {
-        select: {
-          userId: true,
-        },
-      },
-      _count: {
-        select: {
-          replies: true,
-        },
-      },
-    },
-    orderBy: {
-      createdAt: "desc",
-    },
-  });
+  let posts = await fetchPosts(autherId.id);
 
   return (
     <div className="space-y-4">
